@@ -40,12 +40,12 @@ export class InstructionService {
                 break;
             }
             case 'W': {
-                if (mower.pos_x - 1 >= board[0])
+                if ((mower.pos_x - 1) >= 0)
                     mower.pos_x -= 1;
                 break;
             }
             case 'S': {
-                if (mower.pos_y - 1 >= board[1])
+                if ((mower.pos_y - 1) >= 0)
                     mower.pos_y -= 1;
                 break
             }
@@ -69,6 +69,7 @@ export class InstructionService {
                 lines[i].split(' ').forEach(element=> {
                     coords.push(element[0]);
                 });
+
                 const mower: Mower = {
                     pos_x: Number(coords[0]),
                     pos_y: Number(coords[1]),
